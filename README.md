@@ -9,7 +9,7 @@
 4. Use a route variable value in params within a controller action (like in Post.find(params[:id])
 5. Use the convention of naming the primary key :id as a route variable
 6. Pass an instance variable to the view
-7. Use a singular AR instance in a view to generate a dynamic template based on data loaded via a route variable * (this objective should be re-written)* 
+7. use a route variable to load a object and render that show page
 
 ## Notes
 
