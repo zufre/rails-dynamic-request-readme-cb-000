@@ -139,7 +139,7 @@ Replace that with:
 visit post_path(subject)
 ```
 
-The tests are still passing and it's considered a better practice to leverage build in route methods as opposed to hard coding paths. Lastly, let's refactor the controller, our ``Post.find``` method works great, but what happens when we want to make this available to other methods in the controller? It would be better if we had a before action that will store the ```@post``` instance variable for the methods that should have it. The ```posts_controller.rb``` file should be refactored to look something like this:
+The tests are still passing and it's considered a better practice to leverage build in route methods as opposed to hard coding paths. Lastly, let's refactor the controller, our ```Post.find``` method works great, but what happens when we want to make this available to other methods in the controller? It would be better if we had a before action that will store the ```@post``` instance variable for the methods that should have it. The ```posts_controller.rb``` file should be refactored to look something like this:
 
 ```ruby
 class PostsController < ApplicationController
