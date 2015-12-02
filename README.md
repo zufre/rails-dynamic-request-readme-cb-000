@@ -22,3 +22,5 @@ how to draw a dynamic route, :variable syntax and how that is arbitrary but will
 how to access the dynamic route variable in a controller action and param how to use that data in find Post
 
 passing an instance variable to a view
+
+<a href='https://learn.co/lessons/rails-dynamic-request-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
