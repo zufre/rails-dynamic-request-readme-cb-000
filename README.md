@@ -14,9 +14,9 @@ This is mapped to the `static` controller and `about` action, which renders the 
 
 If you are comfortable with how static requests you will pick up on dynamic requests quickly. We according to REST, if we wanted to get the post with the id of `42` we would go to `/posts/42`. So you could create a new line in your routes file for each post... but that would get ridiculous and you would have to modify your web server every time someone posts. So! we have dynamic routes. A breakdown of what is happening is below:
 
-1. The ```routes.rb``` file takes in the request and processes it like normal, except this time it also parses the ```42``` parameter and passes it to the posts' controller.
+1. The ```routes.rb``` file takes in the request and processes it like normal, except this time it also parses the ```42``` as a parameter and passes it to the posts' controller.
 
-2. From that point the controller parses the ```42``` parameter and runs a query on the Post model, storing the result in an instance variable.
+2. From that point the controller that you write will parse the ```42``` parameter and run a query on the Post model, storing the result in an instance variable.
 
 3. Lastly the controller passes the instance variable to the associated view which renders that specific post record details to the client.
 
@@ -24,7 +24,7 @@ In review, what's the difference between static and dynamic routes?
 
 * Static routes render pages that have a hard coded path connected to them, for example the `/welcome` path will always show the `welcome` page.
 
-* Dynamic routes will render different data based on the parameters passed to the route. For example the `/posts/42` route will render the `post` data for `post`: `42`, whereas `/posts/222` will render the `post` data for record `222`.
+* Dynamic routes will render different data based on the parameters passed to the route. For example the `/posts/42` route will render the `post` data for `post`: `42`, whereas `/posts/222` will render the `post` data for record with id `222`.
 
 
 ## Code Implementation
