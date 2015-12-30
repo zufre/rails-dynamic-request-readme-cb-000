@@ -36,14 +36,15 @@ In order to setup a dynamic request feature we will start by writing a test to v
 
 require 'rails_helper'
 
-feature 'navigate to post pages' do
-  let(:post) { Post.create(title: "My Post", description: "My post desc") }
-
-  scenario 'on the show page' do
-    visit "/posts/#{post.id}"
-    expect(page.status_code).to eq(200)
+describe 'navigate' do
+  before do
+    @post = Post.create(title: "My Post", description: "My post desc")
   end
 
+  it 'to post pages' do
+    visit "/posts/#{@post.id}"
+    expect(page.status_code).to eq(200)
+  end
 end
 ```
 
@@ -73,13 +74,24 @@ If you start the Rails server and navigate to `/posts/1` or anything `post` reco
 Now that we have the routing configured, let's build a test to see if the post content is rendered on the show page with the title being in an `h1` tag and the description in a `p` tag, below are the scenarios:
 
 ```ruby
-# Post for reference:
-# title "My Post"
-# description "My post description"
+# spec/features/post_spec.rb
 
-scenario 'title is shown on the show page in a h1 tag' do
-  visit "/posts/#{subject.id}"
-  expect(page).to have_css("h1", text: "My Post")
+require 'rails_helper'
+
+describe 'navigate' do
+  before do
+    @post = Post.create(title: "My Post", description: "My post desc")
+  end
+
+  it 'shows the title on the show page in a h1 tag' do
+    visit "/posts/#{@post.id}"
+    expect(page).to have_css("h1", text: "My Post")
+  end
+
+  it 'to post pages' do
+    visit "/posts/#{@post.id}"
+    expect(page.status_code).to eq(200)
+  end
 end
 ```
 
@@ -104,8 +116,8 @@ We're back to all green! Now let's implement the description spec:
 
 ```ruby
 it 'shows the description on the show page in a p tag' do
-  visit "/posts/#{subject.id}"
-  expect(page).to have_css("p", text: "My amazing description")
+  visit "/posts/#{@post.id}"
+  expect(page).to have_css("p", text: "My post desc")
 end
 ```
 This will give us a failure since there are no matches on the template yet, to implement this fix, update the view:
@@ -129,5 +141,7 @@ Replace with:
 ```ruby
 resources :posts, only: :show
 ```
+
+We will go into detail on what the `resources` method does in a future lesson, for right now just know that it entails the seven key RESTful routes, and in this case we are only wanting it to make the `show` action available.
 
 Running the tests for a final time you can see that they're all still passing, nice work!
