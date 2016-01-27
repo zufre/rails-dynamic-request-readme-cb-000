@@ -12,7 +12,7 @@ This is mapped to the `static` controller and `about` action, which renders the 
 
 ## Dynamic Requests
 
-If you are comfortable with how static requests you will pick up on dynamic requests quickly. We according to REST, if we wanted to get the post with the id of `42` we would go to `/posts/42`. So you could create a new line in your routes file for each post... but that would get ridiculous and you would have to modify your web server every time someone posts. So! we have dynamic routes. A breakdown of what is happening is below:
+If you are comfortable with how static requests you will pick up on dynamic requests quickly. If we,  according to REST, wanted to get the post with the id of `42` we would go to `/posts/42`. So you could create a new line in your routes file for each post... but that would get ridiculous and you would have to modify your web server every time someone posts. So! we have dynamic routes. A breakdown of what is happening is below:
 
 1. The `routes.rb` file takes in the request and processes it like normal, except this time it also parses the `42` as a parameter and passes it to the posts' controller.
 
@@ -145,3 +145,5 @@ resources :posts, only: :show
 We will go into detail on what the `resources` method does in a future lesson, for right now just know that it entails the seven key RESTful routes, and in this case we are only wanting it to make the `show` action available.
 
 Running the tests for a final time you can see that they're all still passing, nice work!
+
+<a href='https://learn.co/lessons/rails-dynamic-request-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
