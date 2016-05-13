@@ -5,7 +5,7 @@
 You already know how to create a static request, which is where you create a page that doesn't take any parameters and simply renders a view, an example would be: `localhost:3000/about`. For Rails to process this request, the `route.rb` file contains a route such as:
 
 ```ruby
-get 'about', to "static#about"
+get 'about', to: "static#about"
 ```
 
 This is mapped to the `static` controller and `about` action, which renders the `about.html.erb` view template.
@@ -149,3 +149,5 @@ Running the tests for a final time you can see that they're all still passing, n
 <a href='https://learn.co/lessons/rails-dynamic-request-readme' data-visibility='hidden'>View this lesson on Learn.co</a>
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-dynamic-request-readme'>Rails Dynamic Request</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/rails-dynamic-request-readme'>Rails Dynamic Request</a> on Learn.co and start learning to code for free.</p>
