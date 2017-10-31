@@ -48,7 +48,7 @@ describe 'navigate' do
 end
 ```
 
-Running `rspec` gives us an expected error of: `ActionController::RoutingError: No route matches [GET] "/posts/1"`. To correct this error, let's draw a route that maps to a show action in the PostsController:
+Running `rspec` gives us an expected error of: `ActionController::RoutingError: No route matches [GET] "/posts/1"`. To correct this error, let's draw a route in *config/routes.rb* that maps to a show action in the PostsController:
 
 ```ruby
 get 'posts/:id', to: 'posts#show'
