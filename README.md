@@ -130,7 +130,11 @@ This will give us a failure since there are no matches on the template yet. To i
 <p><%= @post.description %></p>
 ```
 
-Now we're passing again, and you now know how to create dynamic routes in Rails! However, we would be remiss if we didn't follow the full "Red, Green, Refactor" TDD workflow. There are a few elements of the application that can be refactored. Instead of the long, drawn out `get` route we placed in our `routes.rb` file, we can use Ruby's RESTful defaults and the `resources` method. Problem is, we only have one of the seven RESTful routes. Thankfully, we can pass in an `only` option, selecting which of the seven RESTful routes we care about. In this case, we only care about the `show` action.
+Now we're passing again, and you now know how to create dynamic routes in Rails! However, we would be remiss if we didn't follow the full "Red, Green, Refactor" TDD workflow.  
+
+### Resource routing
+
+There are a few elements of the application that can be refactored. Instead of the long, drawn out `get` route we placed in our `routes.rb` file, we can use Ruby's RESTful defaults and the `resources` method. Problem is, we only have one of the seven RESTful routes. Thankfully, we can pass in an `only` option, selecting which of the seven RESTful routes we care about. In this case, we only care about the `show` action.
 
 Remove:
 
@@ -149,3 +153,5 @@ We will go into detail on what the `resources` method does in a future lesson. F
 Run the tests for a final time, and they should still be passing! Nice work!
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rails-dynamic-request-readme'>Rails Dynamic Request</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/rails-dynamic-request-readme'>Rails Dynamic Request</a> on Learn.co and start learning to code for free.</p>
