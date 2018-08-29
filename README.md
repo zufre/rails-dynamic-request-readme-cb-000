@@ -110,7 +110,7 @@ end
 In this line, our show action is running a database query on the Post model that will return a post with an ID that matches the route parameters. It will store this record in the `@post` instance variable and make it available to the `show.html.erb` file. Let's get our spec passing by placing the post's title on the show view template:
 
 ```erb
-<% # app/views/posts/show.html.erb %>
+<%# app/views/posts/show.html.erb %>
 <h1><%= @post.title %></h1>
 ```
 
@@ -125,7 +125,7 @@ end
 This will give us a failure since there are no matches on the template yet. To implement this fix, update the view:
 
 ```erb
-<% # app/views/posts/show.html.erb %>
+<%# app/views/posts/show.html.erb %>
 <h1><%= @post.title %></h1>
 <p><%= @post.description %></p>
 ```
